@@ -1,0 +1,449 @@
+{
+    "data": {
+
+        "266": {
+            "ChampName": "Aatrox"
+        },
+        "103": {
+            "ChampName": "Ahri"
+        },
+        "84": {
+            "ChampName": "Akali"
+        },
+        "12": {
+            "ChampName": "Alistar"
+        },
+        "32": {
+            "ChampName": "Amumu"
+        },
+        "34": {
+            "ChampName": "Anivia"
+        },
+        "1": {
+            "ChampName": "Annie"
+        },
+        "523": {
+            "ChampName": "Aphelios"
+        },
+        "22": {
+            "ChampName": "Ashe"
+        },
+        "136": {
+            "ChampName": "AurelionSol"
+        },
+        "268": {
+            "ChampName": "Azir"
+        },
+        "432": {
+            "ChampName": "Bard"
+        },
+        "53": {
+            "ChampName": "Blitzcrank"
+        },
+        "63": {
+            "ChampName": "Brand"
+        },
+        "201": {
+            "ChampName": "Braum"
+        },
+        "51": {
+            "ChampName": "Caitlyn"
+        },
+        "164": {
+            "ChampName": "Camille"
+        },
+        "69": {
+            "ChampName": "Cassiopeia"
+        },
+        "31": {
+            "ChampName": "Chogath"
+        },
+        "42": {
+            "ChampName": "Corki"
+        },
+        "122": {
+            "ChampName": "Darius"
+        },
+        "131": {
+            "ChampName": "Diana"
+        },
+        "119": {
+            "ChampName": "Draven"
+        },
+        "36": {
+            "ChampName": "DrMundo"
+        },
+        "245": {
+            "ChampName": "Ekko"
+        },
+        "60": {
+            "ChampName": "Elise"
+        },
+        "28": {
+            "ChampName": "Evelynn"
+        },
+        "81": {
+            "ChampName": "Ezreal"
+        },
+        "9": {
+            "ChampName": "Fiddlesticks"
+        },
+        "114": {
+            "ChampName": "Fiora"
+        },
+        "105": {
+            "ChampName": "Fizz"
+        },
+        "3": {
+            "ChampName": "Galio"
+        },
+        "41": {
+            "ChampName": "Gangplank"
+        },
+        "86": {
+            "ChampName": "Garen"
+        },
+        "150": {
+            "ChampName": "Gnar"
+        },
+        "79": {
+            "ChampName": "Gragas"
+        },
+        "104": {
+            "ChampName": "Graves"
+        },
+        "120": {
+            "ChampName": "Hecarim"
+        },
+        "74": {
+            "ChampName": "Heimerdinger"
+        },
+        "420": {
+            "ChampName": "Illaoi"
+        },
+        "39": {
+            "ChampName": "Irelia"
+        },
+        "427": {
+            "ChampName": "Ivern"
+        },
+        "40": {
+            "ChampName": "Janna"
+        },
+        "59": {
+            "ChampName": "JarvanIV"
+        },
+        "24": {
+            "ChampName": "Jax"
+        },
+        "126": {
+            "ChampName": "Jayce"
+        },
+        "202": {
+            "ChampName": "Jhin"
+        },
+        "222": {
+            "ChampName": "Jinx"
+        },
+        "145": {
+            "ChampName": "Kaisa"
+        },
+        "429": {
+            "ChampName": "Kalista"
+        },
+        "43": {
+            "ChampName": "Karma"
+        },
+        "30": {
+            "ChampName": "Karthus"
+        },
+        "38": {
+            "ChampName": "Kassadin"
+        },
+        "55": {
+            "ChampName": "Katarina"
+        },
+        "10": {
+            "ChampName": "Kayle"
+        },
+        "141": {
+            "ChampName": "Kayn"
+        },
+        "85": {
+            "ChampName": "Kennen"
+        },
+        "121": {
+            "ChampName": "Khazix"
+        },
+        "203": {
+            "ChampName": "Kindred"
+        },
+        "240": {
+            "ChampName": "Kled"
+        },
+        "96": {
+            "ChampName": "KogMaw"
+        },
+        "7": {
+            "ChampName": "Leblanc"
+        },
+        "64": {
+            "ChampName": "LeeSin"
+        },
+        "89": {
+            "ChampName": "Leona"
+        },
+        "127": {
+            "ChampName": "Lissandra"
+        },
+        "236": {
+            "ChampName": "Lucian"
+        },
+        "117": {
+            "ChampName": "Lulu"
+        },
+        "99": {
+            "ChampName": "Lux"
+        },
+        "54": {
+            "ChampName": "Malphite"
+        },
+        "90": {
+            "ChampName": "Malzahar"
+        },
+        "57": {
+            "ChampName": "Maokai"
+        },
+        "11": {
+            "ChampName": "MasterYi"
+        },
+        "21": {
+            "ChampName": "MissFortune"
+        },
+        "62": {
+            "ChampName": "MonkeyKing"
+        },
+        "82": {
+            "ChampName": "Mordekaiser"
+        },
+        "25": {
+            "ChampName": "Morgana"
+        },
+        "267": {
+            "ChampName": "Nami"
+        },
+        "75": {
+            "ChampName": "Nasus"
+        },
+        "111": {
+            "ChampName": "Nautilus"
+        },
+        "518": {
+            "ChampName": "Neeko"
+        },
+        "76": {
+            "ChampName": "Nidalee"
+        },
+        "56": {
+            "ChampName": "Nocturne"
+        },
+        "20": {
+            "ChampName": "Nunu"
+        },
+        "2": {
+            "ChampName": "Olaf"
+        },
+        "61": {
+            "ChampName": "Orianna"
+        },
+        "516": {
+            "ChampName": "Ornn"
+        },
+        "80": {
+            "ChampName": "Pantheon"
+        },
+        "78": {
+            "ChampName": "Poppy"
+        },
+        "555": {
+            "ChampName": "Pyke"
+        },
+        "246": {
+            "ChampName": "Qiyana"
+        },
+        "133": {
+            "ChampName": "Quinn"
+        },
+        "497": {
+            "ChampName": "Rakan"
+        },
+        "33": {
+            "ChampName": "Rammus"
+        },
+        "421": {
+            "ChampName": "RekSai"
+        },
+        "58": {
+            "ChampName": "Renekton"
+        },
+        "107": {
+            "ChampName": "Rengar"
+        },
+        "92": {
+            "ChampName": "Riven"
+        },
+        "68": {
+            "ChampName": "Rumble"
+        },
+        "13": {
+            "ChampName": "Ryze"
+        },
+        "113": {
+            "ChampName": "Sejuani"
+        },
+        "235": {
+            "ChampName": "Senna"
+        },
+        "875": {
+            "ChampName": "Sett"
+        },
+        "35": {
+            "ChampName": "Shaco"
+        },
+        "98": {
+            "ChampName": "Shen"
+        },
+        "102": {
+            "ChampName": "Shyvana"
+        },
+        "27": {
+            "ChampName": "Singed"
+        },
+        "14": {
+            "ChampName": "Sion"
+        },
+        "15": {
+            "ChampName": "Sivir"
+        },
+        "72": {
+            "ChampName": "Skarner"
+        },
+        "37": {
+            "ChampName": "Sona"
+        },
+        "16": {
+            "ChampName": "Soraka"
+        },
+        "50": {
+            "ChampName": "Swain"
+        },
+        "517": {
+            "ChampName": "Sylas"
+        },
+        "134": {
+            "ChampName": "Syndra"
+        },
+        "223": {
+            "ChampName": "TahmKench"
+        },
+        "163": {
+            "ChampName": "Taliyah"
+        },
+        "91": {
+            "ChampName": "Talon"
+        },
+        "44": {
+            "ChampName": "Taric"
+        },
+        "17": {
+            "ChampName": "Teemo"
+        },
+        "412": {
+            "ChampName": "Thresh"
+        },
+        "18": {
+            "ChampName": "Tristana"
+        },
+        "48": {
+            "ChampName": "Trundle"
+        },
+        "23": {
+            "ChampName": "Tryndamere"
+        },
+        "4": {
+            "ChampName": "TwistedFate"
+        },
+        "29": {
+            "ChampName": "Twitch"
+        },
+        "77": {
+            "ChampName": "Udyr"
+        },
+        "6": {
+            "ChampName": "Urgot"
+        },
+        "110": {
+            "ChampName": "Varus"
+        },
+        "67": {
+            "ChampName": "Vayne"
+        },
+        "45": {
+            "ChampName": "Veigar"
+        },
+        "161": {
+            "ChampName": "Velkoz"
+        },
+        "254": {
+            "ChampName": "Vi"
+        },
+        "112": {
+            "ChampName": "Viktor"
+        },
+        "8": {
+            "ChampName": "Vladimir"
+        },
+        "106": {
+            "ChampName": "Volibear"
+        },
+        "19": {
+            "ChampName": "Warwick"
+        },
+        "498": {
+            "ChampName": "Xayah"
+        },
+        "101": {
+            "ChampName": "Xerath"
+        },
+        "5": {
+            "ChampName": "XinZhao"
+        },
+        "157": {
+            "ChampName": "Yasuo"
+        },
+        "83": {
+            "ChampName": "Yorick"
+        },
+        "350": {
+            "ChampName": "Yuumi"
+        },
+        "154": {
+            "ChampName": "Zac"
+        },
+        "238": {
+            "ChampName": "Zed"
+        },
+        "115": {
+            "ChampName": "Ziggs"
+        },
+        "26": {
+            "ChampName": "Zilean"
+        },
+        "142": {
+            "ChampName": "Zoe"
+        },
+        "143": {
+            "ChampName": "Zyra"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background:url(../assets/infernalMorde.jpg)  fixed center top no-repeat;
+    background-size: cover;
+}
+
+.sideBar {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    background: #f5f6fa;
+    left: 0;
+}
+
+.titles{
+    text-align: left;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+.inputs{
+    border: none;
+    background: #dcdde1;
+    font-weight:bold;
+    color:#000;
+}
+
+.checkBoxs{
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.textParafase{
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#818181;
+}
+
+.logoIcon{
+    max-width: 90px;
+}
+
+.servers{
+    text-decoration: none;
+    color:#000;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    border:solid 0px ;
+    font-size: 20px;
+}
+
+.buttonLogIn{
+    border-radius: 50%;
+    background: none;
+    border: 1px solid #718093;
+    color: #718093;
+    text-transform: uppercase;
+} 
+
+.buttonLogIn:hover{
+    transition: 0.5s;
+    border: 1px solid #c21616;
+    color: #c21616;
+}
