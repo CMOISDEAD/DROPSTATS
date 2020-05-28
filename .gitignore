@@ -24,6 +24,6 @@ yarn-error.log*
 
 #by DROPDEADS
 /notes
-/public
+/Backups
 /src/assets/*
 /src/KEY/*
