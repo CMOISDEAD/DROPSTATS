@@ -1,0 +1,63 @@
+this.state.cdnURL + this.state.lolCurrentV + champions.name + '.png'
+7hYD6J2lrElBgesIU8swVytubDeyS6CTrmdIW8qLuMON_to
+
+Champion Data
+http://ddragon.leagueoflegends.com/cdn/10.7.1/data/en_US/champion.json
+
+Summoners icons
+https://ddragon.leagueoflegends.com/cdn/10.6.1/img/profileicon/27.png
+Splash Assets (to change skin change "0" for number of a skin)
+http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg
+loading screen
+http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg
+Square asssets
+http://ddragon.leagueoflegends.com/cdn/10.7.1/img/champion/Aatrox.png
+Passive Assets
+http://ddragon.leagueoflegends.com/cdn/10.7.1/img/passive/Anivia_P.png
+
+Champion abilities
+http://ddragon.leagueoflegends.com/cdn/10.7.1/img/spell/FlashFrost.png
+
+
+Item Data
+http://ddragon.leagueoflegends.com/cdn/10.7.1/data/en_US/item.json
+Item Assets
+http://ddragon.leagueoflegends.com/cdn/10.7.1/img/item/1001.png
+
+Summoner Spells
+http://ddragon.leagueoflegends.com/cdn/10.7.1/data/en_US/summoner.json
+http://ddragon.leagueoflegends.com/cdn/10.7.1/img/spell/SummonerFlash.png
+
+
+          <div className="border border-danger col-sm article">
+            <ChampsR/>
+          </div>         
+
+
+ const myvar = data
+            let Namess 
+            for (var key in myvar) {
+                Namess = myvar[key]
+            }
+
+            this.setState({
+                freeChampionsNames : Namess
+            })
+
+<if(this.state.freeChampionIds && this.state.freeChampionsNames){
+                const toUse = this.state.freeChampionsNames
+                const freeChampionIds = this.state.freeChampionIds
+            
+                const arrayOfNames = []
+                
+                
+                for (let i = 0; i <= freeChampionIds.length; i++) {
+                    var num = freeChampionIds[i]
+                    
+                    arrayOfNames.push(`http://ddragon.leagueoflegends.com/cdn/10.7.1/img/champion/${toUse[num].ChampName}.png`)
+                    
+                    this.setState({
+                        realCNames : arrayOfNames
+                    })
+                }
+            }
