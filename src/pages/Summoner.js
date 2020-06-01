@@ -94,7 +94,7 @@ class Summoner extends Component {
         fetch(
           "https://la1.api.riotgames.com/lol/match/v4/matchlists/by-account/" +
             data.accountId +
-            "?endIndex=1&" +
+            "?endIndex=10&" +
             apiKey
         )
           .then((response) => {
@@ -176,7 +176,9 @@ class Summoner extends Component {
         return (
           <tr key={i}>
             <th>
-              <p>{list.champion}</p>
+              <a href={"champions/" + data[list.champion].ChampName} alt="...">
+                <img src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${data[list.champion].ChampName}.png`} alt={list.champion}/>
+              </a>
             </th>
             <td>
               <p>{list.timestamp}</p>

@@ -51,7 +51,7 @@ class champsR extends Component {
 
     return (
       <div className="row">
-        <div className="col">
+        <div className="col m-0">
           <h3 className="text-center main-color">Champion Rotation</h3>
           {waiting}
         </div>
