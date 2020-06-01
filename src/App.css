@@ -1,18 +1,15 @@
 body{
   background: #f5f6fa
 }
-
 * {
   margin: 0px;
   padding: 0px;
 }
-
 .main-color{
   color: #d63031;
   text-transform: uppercase;
   font-weight: bolder;
 }
-
 #sidebar {
   z-index: 30;
   position: fixed;
@@ -24,11 +21,9 @@ body{
 -moz-box-shadow: 3px 2px 9px 5px rgba(0,0,0,0.64);
 box-shadow: 3px 2px 9px 5px rgba(0,0,0,0.64);
 }
-
 #sidebar.active {
   left: 0px;
 }
-
 #sidebar ul li {
   color: rgba(201, 4, 168, 0.9);
   list-style: none;
@@ -38,34 +33,28 @@ box-shadow: 3px 2px 9px 5px rgba(0,0,0,0.64);
   font-weight: bold;
   text-transform: uppercase;
 }
-
 .logo{
   max-width:50px;
   margin-left: -9px;
 }
-
 .nav-bar-logo{
   max-width: 30px;
 }
-
 a{
   font-weight: bold;
 
   color: rgba(255, 255, 255, 0.9);
 }
-
 a:link{
   text-decoration: none;
   
 }
-
 #sidebar .toggle-btn {
   position: absolute;
   left: 200px;
   top: 20px;
   cursor: pointer;
 }
-
 #sidebar .toggle-btn span {
   display: block;
   width: 40px;
@@ -73,17 +62,13 @@ a:link{
   font-size: 30px;
   border: 3px solid #000;
 }
-
-
 .article{
   margin-left: 55px;
 }
-
 .div-imagen {
   /* display:inline-block; */
   position:relative;
 }
-
 .div-imagen > div {
   position:absolute;
   top:0;
@@ -92,14 +77,23 @@ a:link{
   padding:10px;
   margin: 50px;
 }
-
+.paragraf-box{
+  /* display:inline-block; */
+  position:relative;
+}
+.paragraf-box > div{
+  position:absolute;
+  top:70%;
+  left:0%;
+  z-index:3;
+  padding:0;
+  margin: 1rem;
+}
 .vanish:hover{
   transition: 500ms;
   transform:scale(1.2);
   opacity: 0.1;
 }
-
-
 /* ALLCHAMPS.JSX */
 .square-champ{
   -webkit-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.79);
@@ -214,5 +208,42 @@ box-shadow: 0px 0px 15px 3px rgba(0,0,0,1);
   width: 45px;
   height: 45px;
   margin: 5px;
+}
+/* CHAMPR */
+.new-champ-art{
+  margin :1rem;
+
+}
+.new-champ-art > img{
+  border:3px solid #d63031;
+  max-width: 90%;
+}
+.champs-rotation{
+  margin: 0;
+  padding:0.5rem;
+  max-width: 120px;
+}
+.story-box{
+  margin: 0;
+}
+.champ-title{
+  color:#f5f6fa;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px  #0abde3;
+}
+.champ-slogan{
+  color:#f5f6fa;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px  #0abde3;
 }
 
