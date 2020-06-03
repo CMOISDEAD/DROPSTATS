@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../App.css";
 import Footer from "../plugins/Footer";
 
+import logo from '../assets/DROPDEADS.png'
+
 import { ritokey } from "../KEY/RIOTAPIKEY.json";
 import { data } from "../champlist.json";
 
@@ -24,7 +26,7 @@ class Summoner extends Component {
     };
     this.handlerSubmit = this.handlerSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.bringData = this.bringData.bind(this);
+    // this.bringData = this.bringData.bind(this);
   }
 
   handleInputChange(e) {
@@ -70,7 +72,6 @@ class Summoner extends Component {
             return response.json();
           })
           .then((response) => {
-            console.log(response);
             this.setState({
               championsMastery1: [
                 response[0].championId,
@@ -94,7 +95,7 @@ class Summoner extends Component {
         fetch(
           "https://la1.api.riotgames.com/lol/match/v4/matchlists/by-account/" +
             data.accountId +
-            "?endIndex=10&" +
+            "?endIndex=8&" +
             apiKey
         )
           .then((response) => {
@@ -110,74 +111,36 @@ class Summoner extends Component {
       .catch(console.log);
   }
 
-  bringData(gameId) {
-    const api = "?api_key=";
-    fetch(
-      "https://la1.api.riotgames.com/lol/match/v4/matches/" +
-        gameId +
-        api +
-        this.state.key
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        let summonerInMatchInfo = (response) => {
-          for (let i = 0; i < 10; i++) {
-            return (
-              response.participants[i].participantId,
-              response.participants[i].teamId,
-              response.participants[i].championId,
-              response.participants[i].stats[i].item0,
-              response.participants[i].stats[i].item1,
-              response.participants[i].stats[i].item2,
-              response.participants[i].stats[i].item3,
-              response.participants[i].stats[i].item4,
-              response.participants[i].stats[i].item5,
-              response.participants[i].stats[i].item6
-            );
-          }
-        };
-
-        this.setState({
-          matchInfo: [
-            {
-              //Info general de la partida
-              //  "gameDuration" : response.gameDuration,
-              //  "seasonId" : response.seasonId,
-              //  "gameMode" : response.gameMode,
-              //Info general de Equipo #1
-              //  "teamId" : response.teams[0].teamId,
-              //  "win" : response.teams[0].win,
-              //  "towerKills" : response.teams[0].towerKills,
-              //  "inhibitorKills" : response.teams[0].inhibitorKills,
-              //Info general de Equipo #2
-              //  "teamId2" : response.teams[1].teamId,
-              //  "win2" : response.teams[1].win,
-              //  "towerKills2" : response.teams[1].towerKills,
-              //  "inhibitorKills2"  : response.teams[1].inhibitorKills,
-              //Info de participantes
-              participantsInfo: summonerInMatchInfo,
-            },
-          ],
-        });
-      })
-      .catch((err) => console.error(err));
-  }
-
   render() {
     let tableInfoToRender;
 
     if (this.state.matchList) {
-      // this.bringData(this.state.matchList.matches[0].gameId)
       tableInfoToRender = this.state.matchList.matches.map((list, i) => {
         //Ejecuto una funcion para obtener los datos de las partidas
-
+        //const api = "?api_key=";
+        // fetch(
+        //   "https://la1.api.riotgames.com/lol/match/v4/matches/" +
+        //   this.state.matchList.matches[i].gameId +
+        //     api +
+        //     this.state.key
+        // )
+        //   .then((response) => {
+        //     return response.json();
+        //   })
+        //   .then((response) => {
+        //     console.log(`este es ${i} intento :${response}`)
+        //   })
+        //   .catch((err) => console.log(err));
         return (
           <tr key={i}>
             <th>
               <a href={"champions/" + data[list.champion].ChampName} alt="...">
-                <img src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${data[list.champion].ChampName}.png`} alt={list.champion}/>
+                <img
+                  src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${
+                    data[list.champion].ChampName
+                  }.png`}
+                  alt={list.champion}
+                />
               </a>
             </th>
             <td>
@@ -258,11 +221,28 @@ class Summoner extends Component {
         </div>
       );
     } else {
-      mainChamps = "loading";
+      mainChamps = <img src={logo} alt="..." className="charge-logo"/>;
+    }
+
+    let champImageWallpaper
+    if(this.state.championsMastery1 &&
+      this.state.championsMastery2 &&
+      this.state.championsMastery3){
+      champImageWallpaper = (
+        <img
+          src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${
+            data[this.state.championsMastery1[0]].ChampName
+          }_1.jpg`}
+          alt=""
+          className="main-champ-wallpaper"
+        />
+      );
+    }else{
+      champImageWallpaper = 'Loading...'
     }
 
     return (
-      <div>
+      <div className="mainchamp">
         <form
           onSubmit={this.handlerSubmit}
           className="summoner-handler container"
@@ -282,8 +262,8 @@ class Summoner extends Component {
 
         <div className="">
           <div className="card container">
-            <div className="summonerInfo">
-              <div className="summoner-img-box">
+            <div className="summonerInfo row">
+              <div className="summoner-img-box col">
                 <img
                   src={this.state.img}
                   className="float-left summonerimg"
@@ -292,8 +272,9 @@ class Summoner extends Component {
                 <div className="summoner-lvl">
                   <p className="lvl-text">{this.state.summonerLevel}</p>
                 </div>
-              </div>
               <h5 className="summonerName p-3">{this.state.summonerName}</h5>
+              </div>
+              <div className="cajitabb col">{champImageWallpaper}</div>
             </div>
             <div className="champsMateryPoints">
               <div className="card-group">

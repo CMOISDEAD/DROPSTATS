@@ -40,7 +40,7 @@ class champsR extends Component {
 
   render() {
     var waiting = this.state.freeChampionIds.map((freeChampionIds, i) => {
-        var index = this.state.freeChampionIds[i]
+      var index = this.state.freeChampionIds[i]
       return (
         <a href={"champions/" + data[index].ChampName}>
           <img
@@ -57,6 +57,7 @@ class champsR extends Component {
       <div className="row">
         <div className="col ">
           <div className="paragraf-box new-champ-art">
+            <h3 className="text-center main-color textTest">Most Recent New Champ</h3>
             <div className="story-box">
               <p className="champ-title">Volibear</p>
               <p className="champ-slogan">The relentless of storm</p>

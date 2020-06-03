@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import '../App.css'
 
-import logo  from '../assets/mainIcon.png'
+import logo  from '../assets/DROPDEADS.png'
 import icon  from '../assets/shield.png'
 import PBE  from '../assets/working.png'
 
