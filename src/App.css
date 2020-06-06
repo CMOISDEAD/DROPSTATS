@@ -152,10 +152,6 @@ a:link {
   margin: 5px;
 }
 
-.cajitabb {
-  margin-left: 5rem;
-}
-
 .summoner-handler {
   padding: 1rem;
 }
@@ -177,7 +173,7 @@ a:link {
 }
 
 .summonerimg {
-  max-width: 18rem;
+  max-width: 10rem;
   border: 3px solid #d63031;
   border-radius: 90%;
 }
@@ -190,8 +186,8 @@ a:link {
 .summoner-lvl {
   z-index: 4;
   position: absolute;
-  padding: 8rem;
-  margin-top: 9rem;
+  padding: 4.1rem;
+  margin-top: 4.5rem;
 }
 
 .lvl-text {
@@ -202,6 +198,49 @@ a:link {
 
 .summonerName {
   font-weight: bolder;
+}
+
+.emblem-rank{
+  max-width: 8rem;
+}
+
+.loqesea{
+  padding:3px;
+  margin: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  text-align: center;
+  border:1px solid #b2bec3 ;
+  border-radius: 5px;
+  font-size: small;
+  text-align: left;
+}
+
+.soloQ{
+  color: #d63031;
+  font-weight: bold;
+}
+
+.text-division{
+  text-align: left;
+  font-weight: bold;
+  font-size: small;
+  margin: 3px;
+}
+
+lol{
+  font-weight: lighter;
+}
+
+.text-wandl{
+  font-weight: bold;
+  font-size: 15px;
+  margin: 3px;
+}
+
+.text-victory-percent{
+
 }
 
 .charge-logo {

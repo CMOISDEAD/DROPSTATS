@@ -4,6 +4,19 @@ import Footer from "../plugins/Footer";
 
 import logo from '../assets/DROPDEADS.png'
 
+// ranked_emblems
+import IRON from '../assets/ranked-emblems/Emblem_Bronze.png'
+import BRONZE from '../assets/ranked-emblems/Emblem_Bronze.png'
+import SILVER from '../assets/ranked-emblems/Emblem_Silver.png'
+import GOLD from '../assets/ranked-emblems/Emblem_Gold.png'
+import PLATINUM from '../assets/ranked-emblems/Emblem_Platinum.png'
+import DIAMOND from '../assets/ranked-emblems/Emblem_Diamond.png'
+import MASTER from '../assets/ranked-emblems/Emblem_Master.png'
+import GRANDMASTER from '../assets/ranked-emblems/Emblem_Grandmaster.png'
+import CHALLENGER from '../assets/ranked-emblems/Emblem_Challenger.png'
+
+
+
 import { ritokey } from "../KEY/RIOTAPIKEY.json";
 import { data } from "../champlist.json";
 
@@ -17,6 +30,7 @@ class Summoner extends Component {
       summonerLevel: "",
       profileIconId: "",
       img: "",
+      ranked:"",
       championsMastery1: "",
       championsMastery2: "",
       championsMastery3: "",
@@ -26,7 +40,6 @@ class Summoner extends Component {
     };
     this.handlerSubmit = this.handlerSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    // this.bringData = this.bringData.bind(this);
   }
 
   handleInputChange(e) {
@@ -91,6 +104,16 @@ class Summoner extends Component {
             });
           })
           .catch(console.log);
+        fetch(`https://la1.api.riotgames.com/lol/league/v4/entries/by-summoner/${data.id}?${apiKey}`)
+        .then((response)=>{
+          return response.json()
+        })
+        .then((response)=>{
+          this.setState({
+            ranked : response[0]
+          })
+        })
+        .catch(err=>console.log(err))
         //MATCHLIST DATOS
         fetch(
           "https://la1.api.riotgames.com/lol/match/v4/matchlists/by-account/" +
@@ -224,21 +247,53 @@ class Summoner extends Component {
       mainChamps = <img src={logo} alt="..." className="charge-logo"/>;
     }
 
-    let champImageWallpaper
-    if(this.state.championsMastery1 &&
-      this.state.championsMastery2 &&
-      this.state.championsMastery3){
-      champImageWallpaper = (
-        <img
-          src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${
-            data[this.state.championsMastery1[0]].ChampName
-          }_1.jpg`}
-          alt=""
-          className="main-champ-wallpaper"
-        />
+    let rankLeague
+    if(this.state.ranked){
+      let RankToggler
+      if(this.state.ranked.tier === 'BRONZE'){
+        RankToggler = BRONZE
+      }else if(this.state.ranked.tier === 'SILVER' ){
+        RankToggler = SILVER;
+      }else if(this.state.ranked.tier === 'GOLD' ){
+        RankToggler = GOLD;
+      }else if(this.state.ranked.tier === 'PLATINUM' ){
+        RankToggler = PLATINUM ;
+      }else if(this.state.ranked.tier === 'DIAMOND' ){
+        RankToggler = DIAMOND; 
+      }else if(this.state.ranked.tier === 'MASTER' ){
+        RankToggler = MASTER; 
+      }else if(this.state.ranked.tier === 'GRANDMASTER' ){
+        RankToggler = GRANDMASTER; 
+      }else if(this.state.ranked.tier === 'CHALLENGER' ){
+        RankToggler = CHALLENGER;
+      }else if(this.state.ranked.tier === 'IRON' ){
+        RankToggler = IRON;
+      }
+      var losses =this.state.ranked.losses
+      var victory = this.state.ranked.wins
+      var vPercent =  (victory/(victory + losses ))*100
+      rankLeague = (
+        <div className="loqesea row">
+          <div className="col">
+            <img
+              src={RankToggler}
+              alt={`${this.state.ranked.tier}.`}
+              className="emblem-rank"
+            />
+          </div>
+          <div className="col">
+            <span className="soloQ">Clasificatoria Solo/Duo</span>
+            <p className="text-division">{`${this.state.ranked.tier} ${this.state.ranked.rank}`}</p>
+            <p className="text-wandl">
+              {`${this.state.ranked.leaguePoints}`}{" "}
+              <lol>{`/${this.state.ranked.wins}W ${this.state.ranked.losses}L.`}</lol>
+            </p>
+            <p className="text-victory-percent">Tasa de victoria: {`${Math.trunc(vPercent)}%`}</p>
+          </div>
+        </div>
       );
     }else{
-      champImageWallpaper = 'Loading...'
+      rankLeague = 'Loading...'
     }
 
     return (
@@ -272,9 +327,10 @@ class Summoner extends Component {
                 <div className="summoner-lvl">
                   <p className="lvl-text">{this.state.summonerLevel}</p>
                 </div>
-              <h5 className="summonerName p-3">{this.state.summonerName}</h5>
+                <h5 className="summonerName p-3">{this.state.summonerName}</h5>
               </div>
-              <div className="cajitabb col">{champImageWallpaper}</div>
+              <div className="cajitabb col">{rankLeague}</div>
+              <div className="cajitabb col">{rankLeague}</div>
             </div>
             <div className="champsMateryPoints">
               <div className="card-group">
