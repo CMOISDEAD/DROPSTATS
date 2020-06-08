@@ -200,48 +200,46 @@ a:link {
   font-weight: bolder;
 }
 
-.emblem-rank{
+.emblem-rank {
   max-width: 8rem;
 }
 
-.loqesea{
-  padding:3px;
+.loqesea {
+  padding: 3px;
   margin: 0px;
   margin-top: 8px;
   margin-bottom: 8px;
   text-transform: capitalize;
   text-align: center;
-  border:1px solid #b2bec3 ;
+  border: 1px solid #b2bec3;
   border-radius: 5px;
   font-size: small;
   text-align: left;
 }
 
-.soloQ{
+.soloQ {
   color: #d63031;
   font-weight: bold;
 }
 
-.text-division{
+.text-division {
   text-align: left;
   font-weight: bold;
   font-size: small;
   margin: 3px;
 }
 
-lol{
+lol {
   font-weight: lighter;
 }
 
-.text-wandl{
+.text-wandl {
   font-weight: bold;
   font-size: 15px;
   margin: 3px;
 }
 
-.text-victory-percent{
-
-}
+.text-victory-percent {}
 
 .charge-logo {
   max-width: 200px;
@@ -255,28 +253,56 @@ lol{
 }
 
 .mastery-points-card {
-  border: 2px solid #d63031;
-  border-radius: 5%;
-  max-width: 150px;
-  margin: 1rem;
+  border: 2px solid #0f2031;
+  max-width: 213px;
+  margin: auto;
   -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 1);
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+.mastery-points-card>.another-shit {
+  position: absolute;
+  z-index: 3;
+  top: 4px;
+  left: 0;
+}
+
+.another-shit {
+  width: 13rem;
+  margin-left: -0.0rem;
+  background-color: #0f203175;
+  margin-top: 19.7rem;
+  text-align: center;
+}
+
+.mastery-emote1{
+  max-width: 80px;
+}
+
+.mastery-emote2{
+  max-width: 80px;
+}
+
+.mastery-emote3{
+  max-width: 60px;
 }
 
 .mastery-points-card>img {
-  border-radius: 50%;
+  margin-left: -1rem;
+  max-width: 210px;
 }
 
 .mastery-level {
   text-align: center;
   font-weight: bolder;
-  color: #d63031;
+  color: #ecf0f1;
 }
 
 .mastery-points {
   font-weight: bolder;
-  color: #d63031;
+  color: #ecf0f1;
   text-align: center;
 }
 

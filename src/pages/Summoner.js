@@ -5,6 +5,7 @@ import Footer from "../plugins/Footer";
 import logo from '../assets/DROPDEADS.png'
 
 // ranked_emblems
+import UNRANKED from '../assets/base-icons/provisional.png'
 import IRON from '../assets/ranked-emblems/Emblem_Bronze.png'
 import BRONZE from '../assets/ranked-emblems/Emblem_Bronze.png'
 import SILVER from '../assets/ranked-emblems/Emblem_Silver.png'
@@ -14,6 +15,12 @@ import DIAMOND from '../assets/ranked-emblems/Emblem_Diamond.png'
 import MASTER from '../assets/ranked-emblems/Emblem_Master.png'
 import GRANDMASTER from '../assets/ranked-emblems/Emblem_Grandmaster.png'
 import CHALLENGER from '../assets/ranked-emblems/Emblem_Challenger.png'
+
+// mastery assets
+import m4 from '../assets/mastery-emotes/m4.png'
+import m5 from '../assets/mastery-emotes/m5.png'
+import m6 from '../assets/mastery-emotes/m6.png'
+import m7 from '../assets/mastery-emotes/m7.png'
 
 
 
@@ -31,6 +38,7 @@ class Summoner extends Component {
       profileIconId: "",
       img: "",
       ranked:"",
+      rankedFlex : "",
       championsMastery1: "",
       championsMastery2: "",
       championsMastery3: "",
@@ -110,7 +118,7 @@ class Summoner extends Component {
         })
         .then((response)=>{
           this.setState({
-            ranked : response[0]
+            ranked : response,
           })
         })
         .catch(err=>console.log(err))
@@ -189,56 +197,91 @@ class Summoner extends Component {
       this.state.championsMastery2 &&
       this.state.championsMastery3
     ) {
+      let masteryEmote ;
+      let masteryEmote2 ;
+      let masteryEmote3 ;
+
+
+      if(this.state.championsMastery1[1] === 7){
+        masteryEmote = m7
+      }else if(this.state.championsMastery1[1] === 6){
+        masteryEmote = m6
+      }else if(this.state.championsMastery1[1] === 5){
+        masteryEmote = m5
+      }else{
+        masteryEmote = m4
+      }
+
+      if(this.state.championsMastery2[1] === 7){
+        masteryEmote2 = m7
+      }else if(this.state.championsMastery2[1] === 6){
+        masteryEmote2 = m6
+      }else if(this.state.championsMastery2[1] === 5){
+        masteryEmote2 = m5
+      }else{
+        masteryEmote2 = m4
+
+      }if(this.state.championsMastery3[1] === 7){
+        masteryEmote3 = m7
+      }else if(this.state.championsMastery3[1] === 6){
+        masteryEmote3 = m6
+      }else if(this.state.championsMastery3[1] === 5){
+        masteryEmote3 = m5
+      }else{
+        masteryEmote3 = m4
+      }
+
+
       mainChamps = (
         <div className="container  row justify-content-center">
           <div className="mastery-points-card col">
             <img
-              src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${
+              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
                 data[this.state.championsMastery1[0]].ChampName
-              }.png`}
+              }_0.jpg`}
               alt={this.state.championsMastery1[0]}
             />
-            <div className="mastery-level">
-              <span>Mastery level</span>
-              <p>{this.state.championsMastery1[1]}</p>
-            </div>
-            <div className="mastery-points">
-              <span>Mastery Points</span>
-              <p>{this.state.championsMastery1[2]}</p>
+            <div className="another-shit row">
+              <div className="mastery-level col">
+                <img src={masteryEmote} alt="..." className="mastery-emote1"/>
+              </div>
+              <div className="mastery-points col">
+                <p>{this.state.championsMastery1[2]}</p>
+              </div>
             </div>
           </div>
 
           <div className="mastery-points-card col">
             <img
-              src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${
+              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
                 data[this.state.championsMastery2[0]].ChampName
-              }.png`}
-              alt={this.state.championsMastery2[0]}
+              }_0.jpg`}
+              alt={this.state.championsMastery1[0]}
             />
-            <div className="mastery-level">
-              <span>Mastery level</span>
-              <p>{this.state.championsMastery2[1]}</p>
-            </div>
-            <div className="mastery-points">
-              <span>Mastery Points</span>
-              <p>{this.state.championsMastery2[2]}</p>
+            <div className="another-shit row">
+              <div className="mastery-level col">
+                <img src={masteryEmote2} alt="..." className="mastery-emote2"/>
+              </div>
+              <div className="mastery-points col">
+                <p>{this.state.championsMastery2[2]}</p>
+              </div>
             </div>
           </div>
 
           <div className="mastery-points-card col">
             <img
-              src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${
+              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${
                 data[this.state.championsMastery3[0]].ChampName
-              }.png`}
+              }_0.jpg`}
               alt={this.state.championsMastery3[0]}
             />
-            <div className="mastery-level">
-              <span>Mastery level</span>
-              <p>{this.state.championsMastery3[1]}</p>
-            </div>
-            <div className="mastery-points">
-              <span>Mastery Points</span>
-              <p>{this.state.championsMastery3[2]}</p>
+            <div className="another-shit row">
+              <div className="mastery-level col">
+                <img src={masteryEmote3} alt="..." className="mastery-emote3"/>
+              </div>
+              <div className="mastery-points col">
+                <p>{this.state.championsMastery3[2]}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -248,52 +291,143 @@ class Summoner extends Component {
     }
 
     let rankLeague
-    if(this.state.ranked){
+    if(this.state.ranked[0]){
       let RankToggler
-      if(this.state.ranked.tier === 'BRONZE'){
+      if(this.state.ranked[0].tier === 'BRONZE'){
         RankToggler = BRONZE
-      }else if(this.state.ranked.tier === 'SILVER' ){
+      }else if(this.state.ranked[0].tier === 'SILVER' ){
         RankToggler = SILVER;
-      }else if(this.state.ranked.tier === 'GOLD' ){
+      }else if(this.state.ranked[0].tier === 'GOLD' ){
         RankToggler = GOLD;
-      }else if(this.state.ranked.tier === 'PLATINUM' ){
+      }else if(this.state.ranked[0].tier === 'PLATINUM' ){
         RankToggler = PLATINUM ;
-      }else if(this.state.ranked.tier === 'DIAMOND' ){
+      }else if(this.state.ranked[0].tier === 'DIAMOND' ){
         RankToggler = DIAMOND; 
-      }else if(this.state.ranked.tier === 'MASTER' ){
+      }else if(this.state.ranked[0].tier === 'MASTER' ){
         RankToggler = MASTER; 
-      }else if(this.state.ranked.tier === 'GRANDMASTER' ){
+      }else if(this.state.ranked[0].tier === 'GRANDMASTER' ){
         RankToggler = GRANDMASTER; 
-      }else if(this.state.ranked.tier === 'CHALLENGER' ){
+      }else if(this.state.ranked[0].tier === 'CHALLENGER' ){
         RankToggler = CHALLENGER;
-      }else if(this.state.ranked.tier === 'IRON' ){
+      }else if(this.state.ranked[0].tier === 'IRON' ){
         RankToggler = IRON;
       }
-      var losses =this.state.ranked.losses
-      var victory = this.state.ranked.wins
+      var losses =this.state.ranked[0].losses
+      var victory = this.state.ranked[0].wins
       var vPercent =  (victory/(victory + losses ))*100
+      let rankType = this.state.ranked[0].queueType
+      if(rankType){
+        if(rankType === 'RANKED_FLEX_SR'){
+          rankType = 'Flexible'
+        }else if(rankType === 'RANKED_SOLO_5x5'){
+          rankType = 'Solo/Duo'
+        }else{
+          rankType = 'UNRANKED'
+        }
+      }
       rankLeague = (
         <div className="loqesea row">
           <div className="col">
             <img
               src={RankToggler}
-              alt={`${this.state.ranked.tier}.`}
+              alt={`${this.state.ranked[0].tier}.`}
               className="emblem-rank"
             />
           </div>
           <div className="col">
-            <span className="soloQ">Clasificatoria Solo/Duo</span>
-            <p className="text-division">{`${this.state.ranked.tier} ${this.state.ranked.rank}`}</p>
+            <span className="soloQ">{`Clasificatori ${rankType}`}</span>
+            <p className="text-division">{`${this.state.ranked[0].tier} ${this.state.ranked[0].rank}`}</p>
             <p className="text-wandl">
-              {`${this.state.ranked.leaguePoints}`}{" "}
-              <lol>{`/${this.state.ranked.wins}W ${this.state.ranked.losses}L.`}</lol>
+              {`${this.state.ranked[0].leaguePoints}`}{" "}
+              <lol>{`/${this.state.ranked[0].wins}W ${this.state.ranked[0].losses}L.`}</lol>
+            </p>
+            <p className="text-victory-percent">
+              Tasa de victoria: {`${Math.trunc(vPercent)}%`}
+            </p>
+          </div>
+        </div>
+      );
+    }else{
+      rankLeague = 'Loading...'
+    }
+
+
+    // FLEX
+    let rankLeagueFlex
+    if(this.state.ranked[1]){
+      let RankTogglerFlex
+      if(this.state.ranked[1].tier === 'BRONZE'){
+        RankTogglerFlex = BRONZE
+      }else if(this.state.ranked[1].tier === 'SILVER' ){
+        RankTogglerFlex = SILVER;
+      }else if(this.state.ranked[1].tier === 'GOLD' ){
+        RankTogglerFlex = GOLD;
+      }else if(this.state.ranked[1].tier === 'PLATINUM' ){
+        RankTogglerFlex = PLATINUM ;
+      }else if(this.state.ranked[1].tier === 'DIAMOND' ){
+        RankTogglerFlex = DIAMOND; 
+      }else if(this.state.ranked[1].tier === 'MASTER' ){
+        RankTogglerFlex = MASTER; 
+      }else if(this.state.ranked[1].tier === 'GRANDMASTER' ){
+        RankTogglerFlex = GRANDMASTER; 
+      }else if(this.state.ranked[1].tier === 'CHALLENGER' ){
+        RankTogglerFlex = CHALLENGER;
+      }else if(this.state.ranked[1].tier === 'IRON' ){
+        RankTogglerFlex = IRON;
+      }else{
+        rankLeagueFlex = UNRANKED
+      }
+      
+      var losses =this.state.ranked[1].losses
+      var victory = this.state.ranked[1].wins
+      var vPercent =  (victory/(victory + losses ))*100
+      let rankType = this.state.ranked[1].queueType
+      if(rankType){
+        if(rankType === 'RANKED_FLEX_SR'){
+          rankType = 'Flexible'
+        }else if(rankType === 'RANKED_SOLO_5x5'){
+          rankType = 'Solo/Duo'
+        }else{
+          rankType = 'UNRANKED'
+        }
+      }
+      rankLeagueFlex = (
+        <div className="loqesea row">
+          <div className="col">
+            <img
+              src={RankTogglerFlex}
+              alt={`${this.state.ranked[1].tier}.`}
+              className="emblem-rank"
+            />
+          </div>
+          <div className="col">
+            <span className="soloQ">{`Clasificatori ${rankType}`}</span>
+            <p className="text-division">{`${this.state.ranked[1].tier} ${this.state.ranked[1].rank}`}</p>
+            <p className="text-wandl">
+              {`${this.state.ranked[1].leaguePoints}`}{" "}
+              <lol>{`/${this.state.ranked[1].wins}W ${this.state.ranked[1].losses}L.`}</lol>
             </p>
             <p className="text-victory-percent">Tasa de victoria: {`${Math.trunc(vPercent)}%`}</p>
           </div>
         </div>
       );
     }else{
-      rankLeague = 'Loading...'
+      let rankLeagueFleximg = UNRANKED
+      rankLeagueFlex = (
+        <div className="loqesea row">
+          <div className="col">
+            <img
+              src={rankLeagueFleximg}
+              alt={`...`}
+              className="emblem-rank"
+            />
+          </div>
+          <div className="col">
+            <span className="soloQ">Clasificatoria 5v5 Flexible</span>
+            <p className="text-division">{`UNRANKED`}</p>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -330,7 +464,7 @@ class Summoner extends Component {
                 <h5 className="summonerName p-3">{this.state.summonerName}</h5>
               </div>
               <div className="cajitabb col">{rankLeague}</div>
-              <div className="cajitabb col">{rankLeague}</div>
+              <div className="cajitabb col">{rankLeagueFlex}</div>
             </div>
             <div className="champsMateryPoints">
               <div className="card-group">

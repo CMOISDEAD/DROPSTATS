@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 #by DROPDEADS
-notes/*
-Backups/*
-src/assets/*
-src/KEY/*
+notes/*.txt
+Backups/*.js
+src/assets/*.*
+src/KEY/*.json
